@@ -21,6 +21,8 @@ FROM perftool/base:latest
 
 WORKDIR /opt/perf
 
+ARG TARGETARCH
+
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk unzip && \
     apt-get clean all && \
@@ -30,4 +32,4 @@ RUN apt-get update && \
     rm -rf arthas-bin.zip && \
     echo "alias arthas='java -jar /opt/perf/arthas/arthas-boot.jar'" >> /etc/bashrc
 
-ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-$TARGETARCH
