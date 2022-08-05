@@ -67,6 +67,13 @@ jobs:
           push: true
           tags: perftool/base:go
           platforms: linux/amd64,linux/arm64
+      - name: python image
+        uses: docker/build-push-action@v3
+        with:
+          context: dockerfile/python
+          push: true
+          tags: perftool/base:python
+          platforms: linux/amd64,linux/arm64
       - name: rust image
         uses: docker/build-push-action@v3
         with:
