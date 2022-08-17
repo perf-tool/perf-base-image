@@ -30,6 +30,6 @@ RUN apt-get update && \
     mkdir -p /opt/perf/arthas && \
     unzip arthas-bin.zip -d /opt/perf/arthas && \
     rm -rf arthas-bin.zip && \
-    echo "alias arthas='java -jar /opt/perf/arthas/arthas-boot.jar'" >> /etc/bashrc
+    echo "alias arthas='java -jar /opt/perf/arthas/arthas-boot.jar'" >> /root/.bashrc
 
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-$TARGETARCH
