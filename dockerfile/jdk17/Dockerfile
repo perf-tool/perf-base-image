@@ -26,6 +26,10 @@ ARG TARGETARCH
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk unzip && \
     apt-get clean all && \
+    wget https://downloads.apache.org/skywalking/java-agent/8.11.0/apache-skywalking-java-agent-8.11.0.tgz && \
+    mkdir /opt/perf/skywalking-agent && \
+    tar -xf apache-skywalking-java-agent-8.11.0.tgz -C skywalking-agent --strip-components 1 && \
+    rm -rf apache-skywalking-java-agent-8.11.0.tgz && \
     wget https://github.com/alibaba/arthas/releases/download/arthas-all-3.6.4/arthas-bin.zip && \
     mkdir -p /opt/perf/arthas && \
     unzip arthas-bin.zip -d /opt/perf/arthas && \
