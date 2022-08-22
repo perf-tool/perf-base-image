@@ -26,6 +26,8 @@ RUN apt-get update && \
     apt-get install -y iputils-ping && \
     apt-get install -y wget curl && \
     apt-get install -y wget tcpdump && \
+    apt-get install -y wget lsof && \
+    apt-get install -y wget iproute2 && \
     apt-get clean all
 RUN echo "alias ll='ls -al'" >> /etc/bash.bashrc && \
     echo "alias ..='cd ..'" >> /etc/bash.bashrc && \
