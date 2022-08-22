@@ -23,6 +23,7 @@ WORKDIR /opt/perf
 
 RUN apt-get update && \
     apt-get install -y sudo vim dumb-init && \
+    apt-get install -y iputils-ping && \
     apt-get install -y wget curl && \
     apt-get install -y wget tcpdump && \
     apt-get clean all
