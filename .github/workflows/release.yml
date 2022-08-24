@@ -54,19 +54,26 @@ jobs:
           push: true
           tags: perftool/base:latest
           platforms: linux/amd64,linux/arm64
-      - name: jdk17 image
-        uses: docker/build-push-action@v3
-        with:
-          context: dockerfile/jdk17
-          push: true
-          tags: perftool/base:jdk17
-          platforms: linux/amd64,linux/arm64
       - name: go image
         uses: docker/build-push-action@v3
         with:
           context: dockerfile/go
           push: true
           tags: perftool/base:go
+          platforms: linux/amd64,linux/arm64
+      - name: graal image
+        uses: docker/build-push-action@v3
+        with:
+          context: dockerfile/graal
+          push: true
+          tags: perftool/base:graal
+          platforms: linux/amd64
+      - name: jdk17 image
+        uses: docker/build-push-action@v3
+        with:
+          context: dockerfile/jdk17
+          push: true
+          tags: perftool/base:jdk17
           platforms: linux/amd64,linux/arm64
       - name: python image
         uses: docker/build-push-action@v3
