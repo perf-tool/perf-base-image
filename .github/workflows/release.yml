@@ -75,6 +75,13 @@ jobs:
           push: true
           tags: perftool/base:jdk17
           platforms: linux/amd64,linux/arm64
+      - name: node image
+        uses: docker/build-push-action@v3
+        with:
+          context: dockerfile/node
+          push: true
+          tags: perftool/base:node
+          platforms: linux/amd64,linux/arm64
       - name: python image
         uses: docker/build-push-action@v3
         with:
