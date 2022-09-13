@@ -17,22 +17,10 @@
 # under the License.
 #
 
-FROM ubuntu
-
-ENV DEBIAN_FRONTEND=noninteractive
+FROM perftool/base:latest
 
 WORKDIR /opt/perf
 
 RUN apt-get update && \
-    apt-get install -y sudo vim dumb-init && \
-    apt-get install -y iputils-ping && \
-    apt-get install -y wget curl && \
-    apt-get install -y wget tcpdump && \
-    apt-get install -y wget lsof && \
-    apt-get install -y wget iproute2 && \
+    apt-get install -y ruby-full && \
     apt-get clean all
-RUN echo "alias ll='ls -al'" >> /etc/bash.bashrc && \
-    echo "alias ..='cd ..'" >> /etc/bash.bashrc && \
-    echo "alias ...='cd ../..'" >> /etc/bash.bashrc && \
-    echo "alias tailf='tail -f'" >> /etc/bash.bashrc && \
-    echo "set nu" >> /etc/vim/vimrc
