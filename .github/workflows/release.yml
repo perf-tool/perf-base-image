@@ -48,56 +48,56 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: ubuntu base image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/latest
           push: true
           tags: perftool/base:latest
           platforms: linux/amd64,linux/arm64
       - name: go image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/go
           push: true
           tags: perftool/base:go
           platforms: linux/amd64,linux/arm64
       - name: graal image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/graal
           push: true
           tags: perftool/base:graal
           platforms: linux/amd64
       - name: jdk17 image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/jdk17
           push: true
           tags: perftool/base:jdk17
           platforms: linux/amd64,linux/arm64
       - name: node image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/node
           push: true
           tags: perftool/base:node
           platforms: linux/amd64,linux/arm64
       - name: python image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/python
           push: true
           tags: perftool/base:python
           platforms: linux/amd64,linux/arm64
       - name: ruby image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/ruby
           push: true
           tags: perftool/base:ruby
           platforms: linux/amd64,linux/arm64
       - name: rust image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: dockerfile/rust
           push: true
